@@ -1,176 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Apioteka</title>
-    
-    
-</head>
-<body>  
-    <nav class="bg-white py-6 border-b border-gray-500 border-1 ">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open main menu</span>
-                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div class="flex flex-shrink-0 items-center">
-                <img class="h-16 w-auto pr-12 mr-12" src="img/Logo.jpg" alt="Apioteka">
-              </div>
-              <div class="hidden sm:ml-6 sm:block">
-                <div class="block py-5 space-x-4">
-                  <a href="#onas"    class="mt-6  px-5 py-1.5 mb-6 text-3xl font-medium text-gray-500 hover:bg-gray-900 transition:transform duration-300 ease-in hover:text-white" >O nas</a>
-                  <a href="#galeria" class="mt-5  px-5 py-1.5 mb-5 text-3xl font-medium text-gray-500 hover:bg-gray-900 transition:transform duration-300 ease-in hover:text-white">Galeria</a>
-                  <a href="#kontakt" class="mt-5  px-5 py-1.5 mb-5 text-3xl font-medium text-gray-500 hover:bg-gray-900 transition:transform duration-300 ease-in hover:text-white ">Kontakt</a>
-                </div>
-              </div>
-            </div>
-            
-                <!--
-                  Dropdown menu, show/hide based on menu state.
-                -->
-              </div>
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#onas"    class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">O nas</a>
-            <a href="#galeria" class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Galeria</a>
-            <a href="#kontakt" class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Kontakt</a>
-        
-          </div>
-        </div>
-    
-      <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-        <div class="absolute inset-0 -z-10 overflow-hidden">
-          <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
-            <defs>
-              <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
-                <path d="M100 200V.5M.5 .5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-              <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
-            </svg>
-            <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
-          </svg>
-        </div>
-        
-          <div class="mx-auto max-w-2xl text-center">
-            <p class="text-base font-semibold leading-7 text-indigo-600">Naturalna pasieka</p>
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"> Apioteka</h2>
-            <p class="mt-6 text-lg text-left leading-8 text-gray-600">Gdzieś w parku Lasów nad Górną Liswartą spotkały się dwa płomyki i wybuchł pożar kreatywnych i zdrowych pomysłów – to tak w skrócie i prawdzie, z mrugnięciem oka. :) Z zamiłowania do kreatywnego tworzenia, potrzeby ciała i tęsknoty ducha narodziła się Apioteka<span id="dots">...</span><span id="more">, kryjąca w nazwie ukłon w stronę części naszego zespołu, czyli mądrych pszczół. Kiedy kilkanaście lat temu pojawiły się w naszym gospodarstwie pszczoły, szybko z „maszynki do miodu” stały się współpracownikami i nauczycielami. Pragnienie dzielenia się pszczelimi darami bez dodatku konwencjonalnych „lekarstw” i ulepszeń, współpraca zamiast konkurencji, wzajemne wsparcie we wzrastaniu oraz powrocie do zdrowia i równowagi – to esencja naszego działania i tworzonych produktów. Napędzani pszczelim paliwem (a nie chodzi tu tylko o miód pitny;)), to nieuchwytne jak mydło pod prysznicem, znajdziecie również w naszych produktach. Godziny spędzone nad recepturami, eksperymentowaniem i tworzeniem to dobry czas, potrzeba i część naszego istnienia w zaufaniu do działania dla dobra wszystkich.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="bg-white border">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="fixed inline-flex items-center justify-center rounded-md p-2 text-gray-400 z-50 bg-white border focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <!--
+            Icon when menu is closed.
 
-              Wyróżniamy się rogatą upartością w działaniu i niechęcią do kompromisu z konwencjonalnym, marketingowo-biznesowym spojrzeniem na Apiotekę przez pryzmat księgowości. Dlatego nie godzimy się na tańszy surowiec pozyskany za pomocą wykorzystania czy nadużycia. Zwracamy uwagę na energię płynącą z tych składników, selekcjonujemy je, a najczęściej, w naszym uporze, pukamy do bram lasu i osobiście zbieramy żywicę. Pytamy siostrę sosnę, czy pozwoli zerwać kilka igieł, albo lądujemy na plantacji konopi, żeby poznać jej opiekuna – człowieka-rolnika, by poczuć i rozpoznać. Słyszymy głos odbiorców i żywo reagujemy na niego w tworzeniu. Inspirujemy się naturą i nie lekceważymy jej z poziomu władzy i nadeksploatacji. Apioteka jest dla nas punktem stycznym wartości, które wyznajemy, i miejscem, gdzie mogą się one zmaterializować w produkcie.
-              
-              Wierzymy, że prostota i umiar są wartością samą w sobie, dlatego w naszych kosmetykach znajdziesz proste składy i jakościowe surowce, jak i produkty wegańskie. Ważne dla nas jest szersze spojrzenie i nie bronimy się przed przyjemnym zapachem naszego mydła, a ciekawość i chęć do rozwoju nieustannie wzbogaca naszą ofertę i świat.</span></p>
-              <button onclick="myFunction()" id="myBtn"class="text-indigo-600">Czytaj dalej</button>
+            Menu open: "hidden", Menu closed: "block"
+          -->
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <!--
+            Icon when menu is open.
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
-        
-        <div class="mx-auto max-w-2xl text-center">
-        <h2 id="galeria" class="mb-0 mt-12 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"> Galeria</h2>
-        <h4 class="mt-10 mb-0">kliknij na obrazek aby zobaczyć na pełnym ekranie</h4>
-          
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <img class="h-8 w-auto" src="img/Logo.jpg" alt="Apioteka" />
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a
+                  href="#onas"
+                  class="rounded-md  px-3 py-2 text-sm font-medium text-gray-800 hover:bg-slate-300"
+                  aria-current="page"
+                  >O nas</a
+                >
+                <a
+                  href="#gallery1"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-slate-300"
+                  >Galeria</a
+                >
+                <a
+                  href="#contact1"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-slate-300"
+                  >Kontakt</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <button
+              type="button"
+              class="relative bg-white p-0 rounded-xl text-gray-400 "
+            ><img class="w-8 h-8" src="img/ig.png">
+            </button>
+            <!-- Profile dropdown -->
+            <div class="relative ml-3">
+              <div>
+                <button
+                  type="button"
+                  class="relative flex bg-gray-800 text-sm rounded-xl "
+                  id="user-menu-button"
+                  aria-expanded="false"
+                  aria-haspopup="true">
+                  <img class="h-8 w-8" src="img/fb.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div id="gallery1" class="relative mx-auto grid grid-cols-3 gap-4 w-2/3 ">
-      <!-- Your gallery images -->
-      <img src="img/01-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/02-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/03-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/04-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/05-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/06-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/08-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/09-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/10-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/11-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/12-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/13-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/14-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/15-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/16-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/17-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/18-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <img src="img/07-Apioteka.jpg" alt="" class="w-full h-auto cursor-pointer" onclick="openModal(this)">
-      <!-- Add other images as needed -->
-    </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden fixed w-auto ml-2 top-16   bg-white border rounded-md z-50   " id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a
+            href="#onas"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-slate-300 border-b"
+            >O nas
+          </a>
+          <a
+            href="#gallery1"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-slate-300 border-b"
+            >Galeria</a>
+          <a
+            href="#contact1"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:bg-slate-300 border-b"
+            >Kontakt</a>
+        </div>
+      </div>
+    </nav>
+
+
+     <!-- -------------------------------- O nas -------------------------------- -->
+
+
     
-    <!-- Modal/Fullscreen Container -->
-    <div id="modal" class="fixed inset-0 z-50 hidden flex justify-center items-center bg-black bg-opacity-75">
-      <div id="modal-content" class="relative bg-white p-4 rounded-lg shadow-lg w-4xl h-auto max-h-[90vh] overflow-hidden">
-        <button id="closeModal" class="absolute top-2 right-2 text-white mx-6 my-6 w-12 h-12 rounded"><img src="img/x.svg"></button>
-        <img id="modal-image" src="" alt="" class="w-full h-auto">
-        <button id="leftArrow" class="absolute inset-y-1/2 left-4 flex items-center justify-center w-4xl h-4xl  rounded-full">
-          <img src="img/arr-l.svg" alt="Previous" class="w-12 h-12">
-        </button>
-        <button id="rightArrow" class="absolute inset-y-1/2 right-4 flex items-center justify-center w-4xl h-4xl rounded-full">
-          <img src="img/arr-r.svg" alt="Next" class="w-12 h-12">
-        </button>
-      </div>
+    <div id="onas"class="mx-auto w-2/3 text-center">
+      <p class="text-base font-semibold leading-7 text-indigo-600 mt-6">
+        Naturalna pasieka
+      </p>
+      <h2
+        class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+      >
+        Apioteka
+      </h2>
+      <p class="mt-6 text-lg text-left leading-8 text-gray-600">
+        Gdzieś w parku Lasów nad Górną Liswartą spotkały się dwa płomyki i
+        wybuchł pożar kreatywnych i zdrowych pomysłów – to tak w skrócie i
+        prawdzie, z mrugnięciem oka. :) Z zamiłowania do kreatywnego
+        tworzenia, potrzeby ciała i tęsknoty ducha narodziła się
+        Apioteka<span id="dots">...</span
+        ><span id="more"
+          >, kryjąca w nazwie ukłon w stronę części naszego zespołu, czyli
+          mądrych pszczół. Kiedy kilkanaście lat temu pojawiły się w naszym
+          gospodarstwie pszczoły, szybko z „maszynki do miodu” stały się
+          współpracownikami i nauczycielami. Pragnienie dzielenia się
+          pszczelimi darami bez dodatku konwencjonalnych „lekarstw” i
+          ulepszeń, współpraca zamiast konkurencji, wzajemne wsparcie we
+          wzrastaniu oraz powrocie do zdrowia i równowagi – to esencja
+          naszego działania i tworzonych produktów. Napędzani pszczelim
+          paliwem (a nie chodzi tu tylko o miód pitny;)), to nieuchwytne jak
+          mydło pod prysznicem, znajdziecie również w naszych produktach.
+          Godziny spędzone nad recepturami, eksperymentowaniem i tworzeniem
+          to dobry czas, potrzeba i część naszego istnienia w zaufaniu do
+          działania dla dobra wszystkich. Wyróżniamy się rogatą upartością w
+          działaniu i niechęcią do kompromisu z konwencjonalnym,
+          marketingowo-biznesowym spojrzeniem na Apiotekę przez pryzmat
+          księgowości. Dlatego nie godzimy się na tańszy surowiec pozyskany
+          za pomocą wykorzystania czy nadużycia. Zwracamy uwagę na energię
+          płynącą z tych składników, selekcjonujemy je, a najczęściej, w
+          naszym uporze, pukamy do bram lasu i osobiście zbieramy żywicę.
+          Pytamy siostrę sosnę, czy pozwoli zerwać kilka igieł, albo
+          lądujemy na plantacji konopi, żeby poznać jej opiekuna –
+          człowieka-rolnika, by poczuć i rozpoznać. Słyszymy głos odbiorców
+          i żywo reagujemy na niego w tworzeniu. Inspirujemy się naturą i
+          nie lekceważymy jej z poziomu władzy i nadeksploatacji. Apioteka
+          jest dla nas punktem stycznym wartości, które wyznajemy, i
+          miejscem, gdzie mogą się one zmaterializować w produkcie.
+          Wierzymy, że prostota i umiar są wartością samą w sobie, dlatego w
+          naszych kosmetykach znajdziesz proste składy i jakościowe surowce,
+          jak i produkty wegańskie. Ważne dla nas jest szersze spojrzenie i
+          nie bronimy się przed przyjemnym zapachem naszego mydła, a
+          ciekawość i chęć do rozwoju nieustannie wzbogaca naszą ofertę i
+          świat.</span
+        >
+      </p>
+      <button onclick="myFunction()" id="myBtn" class="text-indigo-600">
+        Czytaj dalej
+      </button>
     </div>
-      <div id="kontakt" class="bg-white py-24 sm:py-32 mx-auto max-w-4xl px-6 lg:px-8">
-        <div class="flex flex-wrap gap-8">
-          
-          <!-- Contact Information -->
-          <div class="flex-1 min-w-[300px] max-w-4xl h-auto flex flex-col justify-between rounded-2xl bg-gray-50 p-10 pb-6">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Kontakt</h2>
+    <!-- ------------------------------- Galeria ------------------------------- -->
+
+    <div class="mx-auto max-w-2xl text-center">
+      <h2
+        id="galeria"
+        class="mb-0 mt-12 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+      >
+        Galeria
+      </h2>
+      <h4 class="mt-10 mb-12">
+        kliknij na obrazek aby zobaczyć na pełnym ekranie
+      </h4>
+    </div>
+  </div>
+  <div id="gallery1" class="relative mx-auto grid sm:grid-cols-3 sm:gap-4 sm:w-2/3 grid-cols-2 gap-2 w-9/10">
+    <!-- Your gallery images -->
+    <img
+      src="img/01-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/02-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/03-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/04-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/05-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/06-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/08-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/09-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/10-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/11-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/12-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/13-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/14-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/15-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/16-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/17-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/18-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <img
+      src="img/07-Apioteka.jpg"
+      alt=""
+      class="w-full h-auto cursor-pointer"
+      onclick="openModal(this)"
+    />
+    <!-- Add other images as needed -->
+  </div>
+
+  <!-- Modal/Fullscreen Container -->
+  <div
+    id="modal"
+    class="fixed inset-0 z-50 hidden flex justify-center items-center bg-black bg-opacity-75"
+  >
+    <div
+      id="modal-content"
+      class="relative bg-white p-4 rounded-lg shadow-lg w-4xl h-auto max-h-[90vh] overflow-hidden"
+    >
+      <button
+        id="closeModal"
+        class="absolute top-2 right-2 text-white mx-6 my-6 w-12 h-12 rounded"
+      >
+        <img src="img/x.svg" />
+      </button>
+      <img id="modal-image" src="" alt="" class="w-full h-auto" />
+      <button
+        id="leftArrow"
+        class="absolute inset-y-1/2 left-4 flex items-center justify-center w-4xl h-4xl rounded-full"
+      >
+        <img src="img/arr-l.svg" alt="Previous" class="w-12 h-12" />
+      </button>
+      <button
+        id="rightArrow"
+        class="absolute inset-y-1/2 right-4 flex items-center justify-center w-4xl h-4xl rounded-full"
+      >
+        <img src="img/arr-r.svg" alt="Next" class="w-12 h-12" />
+      </button>
+    </div>
+  </div>
+
+
+    <!-- ------------------------------- kontakt ------------------------------- -->
+
+
+    <div id="contact" >
+        <h2
+          id="ch"
+          class="text-3xl font-bold tracking-tight mx-auto w-2/3 mt-12 mb-4 text-gray-900"
+        >
+          Kontakt
+        </h2>
+        <div id="contact1" class="contact mx-auto w-2/3">
+          <div class="k1">
             <p class="leading-7 mb-4 text-gray-600">
-              Instytut Nauk Naturalnych "Źródło"<br>
-              Nr konta Alior Bank: <br>
-              91 2490 0005 0000 4530 0028 4788 <br>
-              Przyjmujemy darowizny na 
-              <a href="#" class="text-indigo-600">cele statutowe</a>
+              Instytut Nauk Naturalnych "Źródło"<br />
+              Nr konta Alior Bank: <br />
+              91 2490 0005 0000 4530 0028 4788 <br />
+              Przyjmujemy darowizny na
+              <a href="#celestatutowe" class="text-indigo-600">cele statutowe</a>
             </p>
           </div>
-      
-          <!-- People's Contact Details -->
-          <div class="flex-1 min-w-[300px] max-w-[300px] h-69 flex flex-col justify-between space-y-6">
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Justyna</h3>
-              <address class="mt-0 space-y-1 text-sm not-italic leading-6 text-gray-600">
-                <p>Apioteka@wp.pl</p>
-              </address>
-              <address class="mt-0 space-y-1 text-sm not-italic leading-6 text-gray-600">
-                <p>+48 697 571 614</p>
-              </address>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Piotr</h3>
-              <address class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">
-                <p>+48 502 084 385</p>
-              </address>
-            </div>
+          <div class="k2">
+            <h3 class="mb-2 text-base font-semibold leading-7 text-gray-900">
+              Justyna
+            </h3>
+            <p class="mb-2 text-gray-600">+48 697 571 614</p>
+            <h3 class="mb-2 text-base font-semibold leading-7 text-gray-900">
+              Piotr
+            </h3>
+            <p class="mb-2 text-gray-600">+48 502 084 385</p>
           </div>
-      
-          <!-- Social Media Links -->
-          <div class="flex-1 flex flex-col gap-8">
-            <!-- Instagram Box -->
-            <a href="https://instagram.com/apioteka" class="flex items-center justify-center bg-gray-50 rounded-2xl">
-              <img src="img/ig.svg" class="py-4 px-auto">
-            </a>
-            <!-- Facebook Box -->
-            <a href="https://facebook.com/apioteka" class="flex items-center justify-center bg-gray-50 rounded-2xl">
-              <img src="img/fb.svg" class="py-4 px-auto">
-            </a>
-          </div>
-        </div>
       </div>
-      
-    </body>
-<script src="app.js"></script>
+    <script src="app.js"></script>
+  
+  </body>
 </html>

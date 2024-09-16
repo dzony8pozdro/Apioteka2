@@ -1,17 +1,5 @@
 // smartphone integration
-function adjustGalleryClass() {
-  const gallery = document.getElementById("gallery1");
-  if (!gallery) return; // Exit if the element is not found
-
-  if (window.innerWidth < 1400) {
-    gallery.className = "relative mx-auto grid grid-cols-2 gap-2 w-9/10";
-  } else {
-    gallery.className = "relative mx-auto grid grid-cols-3 gap-4 w-2/3 ";
-  }
-}
-// Function to toggle the mobile menu
 function toggleMobileMenu() {
-  // Get the button, menu, and icons
   const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
   const mobileMenu = document.getElementById("mobile-menu");
   const openIcon = menuButton.querySelector("svg.block"); // Icon when menu is closed
@@ -28,22 +16,10 @@ function toggleMobileMenu() {
     closeIcon.classList.add("hidden");
   }
 }
-
 // Add event listener to the menu button
 document
   .querySelector('[aria-controls="mobile-menu"]')
   .addEventListener("click", toggleMobileMenu);
-
-// Run the function on page load
-document.addEventListener("DOMContentLoaded", function () {
-  adjustGalleryClass();
-});
-
-// Run the function on window resize
-window.addEventListener("resize", function () {
-  adjustGalleryClass();
-});
-
 // more less
 function myFunction() {
   var dots = document.getElementById("dots");
@@ -76,20 +52,16 @@ function openModal(img) {
   leftArrow.onclick = () => navigateToPreviousImage(img);
   rightArrow.onclick = () => navigateToNextImage(img);
 }
-
 // Close Modal Function
 function closeModal() {
   const modal = document.getElementById("modal");
   modal.classList.add("hidden");
 }
-
 // Function to Handle Arrow Key Navigation
 function handleArrowKeys(event) {
   const modalImage = document.getElementById("modal-image");
-  if (
-    !modalImage ||
-    !document.getElementById("modal").classList.contains("hidden")
-  ) {
+  if (!modalImage ||
+    !document.getElementById("modal").classList.contains("hidden")) {
     if (event.key === "ArrowLeft") {
       navigateToPreviousImage(modalImage);
     } else if (event.key === "ArrowRight") {
@@ -99,7 +71,6 @@ function handleArrowKeys(event) {
     }
   }
 }
-
 // Function to Navigate to Previous Image
 function navigateToPreviousImage(currentImage) {
   const gallery = document.querySelector("#gallery1");
@@ -113,7 +84,6 @@ function navigateToPreviousImage(currentImage) {
   const previousIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
   openModal(images[previousIndex]);
 }
-
 // Function to Navigate to Next Image
 function navigateToNextImage(currentImage) {
   const gallery = document.querySelector("#gallery1");
@@ -127,9 +97,7 @@ function navigateToNextImage(currentImage) {
   const nextIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
   openModal(images[nextIndex]);
 }
-
 // Event Listener for Closing Modal
 document.getElementById("closeModal").addEventListener("click", closeModal);
-
 // Event Listener for Arrow Key Navigation
 document.addEventListener("keydown", handleArrowKeys);
